@@ -1,0 +1,28 @@
+const platilist = document.getElementById("platilist");
+const platiform = document.getElementById("platiform");
+
+const allPlats = [];
+// Constructor to create new playpus
+function Platypus(name) {
+  this.name = name;
+  this.render = function () {
+    const listItem = document.createElement("li");
+    listItem.textContent = this.name;
+    platilist.appendChild(listItem);
+  };
+}
+
+const perry = new Platypus("Perry");
+perry.render();
+
+// Form for the user to create new objects
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const newplat = new Platypus(event.target.newplat.value);
+  allPlats.push(newplat);
+  platiform.reset();
+  newplat.render();
+  localStorage.setItem("allPlats", JSON.stringify(allPlats));
+}
+
+platiform.addEventListener("submit", handleFormSubmit);

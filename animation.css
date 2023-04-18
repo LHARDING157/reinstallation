@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  background-color: tomato;
+  color: white;
+  font-family: monospace;
+}
+
+.div1 {
+  background-color: chartreuse;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  animation: leftToRight 4.31s 0.34s, upAndDown 5.86s, party 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes leftToRight {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 100px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes upAndDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: calc(100% - 100px);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes party {
+  0% {
+    background-color: #ff0000;
+  }
+  14.2% {
+    background-color: #ff7f00;
+  }
+  28.4% {
+    background-color: #ffff00;
+  }
+  42.6% {
+    background-color: #00ff00;
+  }
+  56.8% {
+    background-color: #0000ff;
+  }
+  71% {
+    background-color: #4b0082;
+  }
+  85.2% {
+    background-color: #9400d3;
+  }
+  100% {
+    background-color: #ff0000;
+  }
+}
